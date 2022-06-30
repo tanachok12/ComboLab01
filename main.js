@@ -8,7 +8,7 @@ const app = Vue.createApp({
             inStock : true,
             inventory: 100,
             link: 'http://www.camt.cmu.ac.th/',
-
+            onSale : true,
             details: ['50% cotton' , '30% wool','20% polyester ' ],
             variants : [
                 { id: 2234,color:'green', image: './assets/images/socks_green.jpg' },
@@ -31,12 +31,12 @@ const app = Vue.createApp({
             this.image = variantImage
         },
         changeStatus() {
-            this.count += 1
-            if(this.count%2 !== 0){
-                this.inventory = 0
+            console.log(this.inventory)
+            if(this.inventory== 100){
+                this.inventory = 0;
             }
-            else if(this.count%2 === 0) {
-                this.inventory = 100
+            else {
+                this.inventory = 100;
             }
 
         }
